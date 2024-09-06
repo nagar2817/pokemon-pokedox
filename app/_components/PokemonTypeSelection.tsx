@@ -31,7 +31,6 @@ const PokemonTypeSelection: React.FC<PokemonTypeSelectionProps> = ({
           value={selectedType || ""}
           onChange={(e) => selectType(e.target.value as string)}
         >
-          <MenuItem value="">All</MenuItem>
           {pokemonTypes.map((type) => (
             <MenuItem key={type} value={type}>
               {type}
