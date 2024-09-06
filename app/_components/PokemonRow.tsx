@@ -1,6 +1,7 @@
 // components/PokemonRow.tsx
 import React from 'react';
-import { TableCell, ImageList, ImageListItem, TableRow,styled } from '@mui/material';
+import { TableCell, TableRow, styled } from '@mui/material';
+import Image from 'next/image';
 
 type PokemonRowProps = {
   pokemon: {
@@ -34,27 +35,13 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 const PokemonRow: React.FC<PokemonRowProps> = ({ pokemon }) => {
   return (
     <StyledTableRow key={pokemon.id}>
-              <TableCell>{pokemon.id}</TableCell>
-              <TableCell>{pokemon.name}</TableCell>
-              <TableCell>{pokemon.types.join(', ')}</TableCell>
-              <TableCell>
-                <img src={pokemon.sprite} alt={pokemon.name} style={{ maxWidth: '100px' }} />
-              </TableCell>
-      </StyledTableRow>
-    // <>
-    //  <TableRow key={pokemon.id}>
-    //   <TableCell>{pokemon.id}</TableCell>
-    //   <TableCell>{pokemon.name}</TableCell>
-    //   <TableCell>{pokemon.types.join(', ')}</TableCell>
-    //   <TableCell>
-    //     <ImageList cols={1}>
-    //       <ImageListItem>
-    //         <img src={pokemon.sprite} alt={pokemon.name} />
-    //       </ImageListItem>
-    //     </ImageList>
-    //   </TableCell>
-    //   </TableRow>
-    // </>
+      <TableCell>{pokemon.id}</TableCell>
+      <TableCell>{pokemon.name}</TableCell>
+      <TableCell>{pokemon.types.join(', ')}</TableCell>
+      <TableCell>
+        <Image src={pokemon.sprite} alt={pokemon.name} width={100} height={100} />
+      </TableCell>
+    </StyledTableRow>
   );
 };
 

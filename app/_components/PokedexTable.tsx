@@ -45,7 +45,7 @@ const PokedexTable: React.FC<PokedexTableProps> = ({ pokemonArray }) => {
         </TableHead>
         <TableBody>
           {pokemonArray.map((pokemon) => (
-            <PokemonRow pokemon={pokemon}/>
+            <PokemonRow pokemon={pokemon} key={pokemon.id}/>
           ))}
         </TableBody>
       </Table>
