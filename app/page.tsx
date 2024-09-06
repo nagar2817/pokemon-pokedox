@@ -10,19 +10,19 @@ export default function Home() {
     <main className={styles.main}>
       <Container maxWidth="md">
         <Box className={styles.section}>
-          <Typography variant="h4" className={styles.title}>
+          <Typography variant="h4" className={styles.title} sx={{marginBottom: '1rem'}}>
             Single Pokemon Search
           </Typography>
           <PokemonRowHelper />
         </Box>
         <Box className={styles.section}>
-          <Typography variant="h4" className={styles.title}>
+          <Typography variant="h4" className={styles.title} sx={{marginBottom: '1rem'}}>
             Multiple Pokemon Search
           </Typography>
           <PokemonTableHelper />
         </Box>
         <Box className={styles.section}>
-          <Typography variant="h4" className={styles.title}>
+          <Typography variant="h4" className={styles.title} sx={{marginBottom: '1rem'}}>
             Filterable Pokedex Table
           </Typography>
           <FilterablePokedexTable />
