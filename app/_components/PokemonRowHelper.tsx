@@ -33,7 +33,7 @@ const PokemonRowHelper: React.FC = () => {
           Search
         </Button>
       </form>
-      {pokemon && <PokemonRow pokemon={pokemon} />}
+      {pokemon && <PokemonRow pokemon={pokemon} key={pokemon.id} />}
     </>
   );
 };
