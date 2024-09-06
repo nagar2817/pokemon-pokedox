@@ -13,7 +13,6 @@ const FilterablePokedexTable: React.FC = () => {
 
   const take = 10; // Number of items per page
 
-  // Use the useQuery hook correctly
   const getPokemonByType = trpc.getPokemonByType.useQuery(
     {
       type: selectedType || "",

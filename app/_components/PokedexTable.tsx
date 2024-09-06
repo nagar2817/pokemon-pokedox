@@ -1,6 +1,7 @@
 import React from 'react';
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, styled } from '@mui/material';
+import { Table, TableBody, TableContainer, TableHead, Paper } from '@mui/material';
 import PokemonRow from './PokemonRow';
+import { StyledTableCell, StyledTableRow } from '../constants/StyledTables';
 
 type PokedexTableProps = {
   pokemonArray: {
@@ -11,37 +12,17 @@ type PokedexTableProps = {
   }[];
 };
 
-const StyledTableCell = styled(TableCell)(({ theme }) => ({
-  fontWeight: 'bold',
-  backgroundColor: theme.palette.primary.main,
-  color: theme.palette.primary.contrastText,
-}));
-
-const StyledTableRow = styled(TableRow)(({ theme }) => ({
-  '&:nth-of-type(odd)': {
-    backgroundColor: theme.palette.action.hover,
-  },
-  // hide last border
-  '&:last-child td, &:last-child th': {
-    border: 0,
-  },
-  // Reduce gap between rows
-  '& > *': {
-    padding: '8px', // Adjust padding to reduce gap
-  },
-}));
-
 const PokedexTable: React.FC<PokedexTableProps> = ({ pokemonArray }) => {
   return (
     <TableContainer component={Paper}>
       <Table>
         <TableHead>
-          <TableRow>
+        <StyledTableRow>
             <StyledTableCell>ID</StyledTableCell>
             <StyledTableCell>Name</StyledTableCell>
             <StyledTableCell>Types</StyledTableCell>
             <StyledTableCell>Sprite</StyledTableCell>
-          </TableRow>
+          </StyledTableRow>
         </TableHead>
         <TableBody>
           {pokemonArray.map((pokemon) => (
