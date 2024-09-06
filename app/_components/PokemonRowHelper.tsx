@@ -20,7 +20,7 @@ const PokemonRowHelper: React.FC = () => {
   };
 
   return (
-    <>
+    <div style={{ display: 'flex', flexDirection: 'column', padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
       <form onSubmit={handleSubmit} style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
         <TextField
           label="Pokemon Name"
@@ -33,8 +33,12 @@ const PokemonRowHelper: React.FC = () => {
           Search
         </Button>
       </form>
-      {pokemon && <PokemonRow pokemon={pokemon} key={pokemon.id} />}
-    </>
+      {pokemon && (
+        <div style={{ maxWidth: '100%', overflowX: 'auto', whiteSpace: 'nowrap' }}>
+          <PokemonRow pokemon={pokemon} key={pokemon.id} />
+        </div>
+      )}
+    </div>
   );
 };
 
